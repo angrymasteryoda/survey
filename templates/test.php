@@ -1,8 +1,42 @@
 <?php
-include '../assets/inc/meta.php';
-echo '<textarea>';
-echo Security::sanitize('<lksd>alsk" \'hdlskahdlsahdioejd lasjd lsaj</lksd>clean
+/**
+ * Created by IntelliJ IDEA.
+ * User: michael
+ * Date: 11/14/13
+ * Time: 6:20 PM
+ * To change this template use File | Settings | File Templates.
+ */
 
-');
-echo '<lksd>alskdjaslkdhlaskhdlskahdlsahdioejd lasjd lsaj</lksd>clean';
-echo '</textarea>';
+include '../config/global.php';
+
+loadClasses();
+
+$b = array(
+    'username' => 'michael',
+    'password' => 'goldfish'
+);
+
+
+$a = array(
+    array(
+        'field' =>'username',
+        'use' => 'name',
+    ),
+    array(
+        'field' =>'password',
+        'use' => 'pass',
+    )
+);
+echo 'test';
+
+
+Test::newvalidate( $a, $b );
+
+//Debug::echoArray( Test::newvalidate( $a, $b ) );
+
+?>
+
+<body bgcolor="#000000" text="#ffffff">
+
+
+</body>

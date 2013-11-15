@@ -1,44 +1,19 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: Michael
- * Date: 10/8/13
- * Time: 9:01 AM
+ * User: michael
+ * Date: 11/14/13
+ * Time: 7:17 PM
  * To change this template use File | Settings | File Templates.
- */ 
-class Validation {
-    static function validate($type, $str = ''   ){
-        if( is_array($type) ){
-            $errors = array();
-            foreach($type as $r => $v){
-                $errors[$r] = self::validate($r, $v);
-            }
-            return $errors;
-        }
-        else{
-            $loadRegex = self::getRegex($type);
-            if( preg_match( $loadRegex['regex'], $str ) ){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    }
+ */
 
-    static function getError($type){
-        if( preg_match('/length-', $type) ){
-            $len = explode('-', $type);
-            return 'has to be ' . $len[1] . ' long';
-        }
-        else{
-            $t = self::getRegex($type);
-            return $t['error'];
-        }
-    }
+class Regex {
 
-    private function getRegex($type = null){
-        $regex = array(
+}
+
+/*
+ *
+ * $regex = array(
             'username' => array(
                 'regex' => '/^[a-zA-Z]{2,50}$/',
                 'error' => 'has to be 2-50 letters only'
@@ -92,21 +67,5 @@ class Validation {
                 'regex' => '/^[01]$/',
                 'error' => 'has to be a 0 or 1'
             )
-        );
-        if($type == null){
-            return $regex;
-        }
-        else if( preg_match('/length-/', $type) ){
-            $len = explode('-', $type);
-            $return = array(
-                'regex' => '/(.){' . $len[1] .'}/',
-                'error' => 'has to be ' . $len[1] . ' long'
-            );
-            return $return;
-        }
-        else{
-            return $regex[$type];
-        }
-    }
-
-}
+ *
+ */
