@@ -22,7 +22,9 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/templates/fishindex.php" charset="ISO-8859-1" />
+  </component>
   <component name="InspectionProjectProfileManager">
     <profiles>
       <profile version="1.0" is_locked="false">
@@ -50,6 +52,21 @@
               </option>
               <option name="lessDirPath" value="E:\php\survey\assets\less" />
               <option name="name" value="E survey" />
+            </LessProfile>
+          </value>
+        </entry>
+        <entry key="linux survey">
+          <value>
+            <LessProfile>
+              <option name="cssDirectories">
+                <list>
+                  <CssDirectory>
+                    <option name="path" value="$PROJECT_DIR$/assets/css" />
+                  </CssDirectory>
+                </list>
+              </option>
+              <option name="lessDirPath" value="$PROJECT_DIR$/assets/less" />
+              <option name="name" value="linux survey" />
             </LessProfile>
           </value>
         </entry>
