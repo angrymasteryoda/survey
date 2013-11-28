@@ -1,4 +1,3 @@
-
 /**************************************************************************/
 /************************************|*************************************/
 /**************************************************************************/
@@ -6,6 +5,7 @@
 
 body{
   background-color: gray;
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
 }
 
 a{
@@ -30,7 +30,11 @@ a:hover{
     height: 35px;
     .gradient(#004b00, rgba(00,150,0,1), rgba(00,75,0,1));
     padding: 5px 5px 0px 5px;
-    
+
+    color: white;
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    font-size: 20px;
+
     a{
       /*stylize*/
       text-shadow: 1px 2px 0 rgba(255,255,255,0.15);
@@ -48,91 +52,155 @@ a:hover{
       color: white;
     }
     a:hover {
-      color: #cccccc;
+      text-decoration: underline;
+        color: #aaaaaa;
     }
   }
-  
-  
-/**************************************************************************/
-/***********************************Login**********************************/
-/**************************************************************************/
-  .mainForm{
-    width: 300px;
-    margin: 60px auto 30px;
-    padding: 10px;
-    position: relative;
-    background: rgba(0,0,0,0.25);
-    border-radius: 25px;
-    font-family: 'Raleway', 'Lato', Arial, sans-serif;
-    color: white;
-    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
-    .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
-    
-    h1{
-      text-align: center;
-      font-size: 22px;
-      padding-bottom: 20px;
+
+  .content{
+    margin: 0 auto 0 !important;
+    width: 1155px;
+    .margin10_top;
+
+    .pageTitle{
+      .aligncenter;
     }
 
-    input{
-      &[type="text"], &[type="password"]{
-        width: 282px;
-        padding: 8px 4px 8px 10px;
-        margin-bottom: 15px;
-        border: 1px solid rgb(46, 40, 40); /* Fallback for shity ie */
-        border: 1px solid rgba(46, 40, 40, 0.8);
-        background: rgba(0,0,0,0.15);
-        .border-radius(2px);
-        .box-shadow( inset 0 1px 1px rgba(0,0,0,0.1) );
-      //.transition( all .2s ease-out );
-        font-family: 'Raleway', 'Lato', Arial, sans-serif;
-        color: white;
-        font-size: 13px;
-      }
+    a{
+      text-decoration: underline;
+    }
 
-      &[type="text"]:hover, &[type="password"]:hover{
-        border-color: #333;
-      }
+    /**************************************************************************/
+    /***********************************Login**********************************/
+    /**************************************************************************/
+    .mainForm{
+      width: 300px;
+      margin: 60px auto 30px;
+      padding: 10px;
+      position: relative;
+      background: rgba(0,0,0,0.25);
+      border-radius: 25px;
+      font-family: 'Raleway', 'Lato', Arial, sans-serif;
+      color: white;
+      text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+      .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
 
-      &[type="text"]:focus, &[type="password"]:focus, &[type="submit"]:focus, &[type="button"]:focus{
-        .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
-        outline: none;
+      h1{
+        text-align: center;
+        font-size: 22px;
+        padding-bottom: 20px;
       }
+    }
 
-      &[type="button"], &[type="submit"]{
-      /* Size and position */
+    .createSurveyForm{
+      width: 800px;
+      margin: 60px auto 30px;
+      padding: 10px;
+      position: relative;
+      background: rgba(0,0,0,0.25);
+      border-radius: 25px;
+      font-family: 'Raleway', 'Lato', Arial, sans-serif;
+      color: white;
+      text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+      .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
+      .aligncenter;
+
+      table{
         width: 100%;
-        padding: 8px 5px;
-
-      /* Styles */
-        .gradient( rgb(00,75,00), rgba(00,150,0,1), rgba(00,75,00,1));
-        .border-radius( 5px );
-        border: 1px solid #4e3043;
-        box-shadow:
-          inset 0 1px rgba(255,255,255,0.4),
-          0 2px 1px rgba(0,0,0,0.1);
-        cursor: pointer;
-      //.transition( all 0.3s ease-out );
-
-      /* Font styles */
-        color: white;
-        text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-        font-size: 16px;
-        font-weight: bold;
-        font-family: 'Raleway', 'Lato', Arial, sans-serif;
+      }
+      h1{
+        text-align: center;
+        font-size: 22px;
+        padding-bottom: 20px;
       }
 
+      input{
+        &[type="text"], &[type="password"]{
+          width: 600px;
+        }
+
+        &[type="button"], &[type="submit"]{
+          width: 300px;
+        }
+      }
+
+      .question{
+        //.aligncenter;
+      }
+
+      textarea{
+        width: 600px;
+      }
     }
 
-    #errors{
-      text-transform: capitalize;
-      line-height: 12pt;
-      color: rgb(247, 76, 76);
-      display: none;
-      font-size: 9pt;
-      margin-bottom: 10px;
+    .surveyForm, .resultsPage, .backIndex{
+      width: 800px;
+      margin: 60px auto 30px;
+      padding: 10px;
+      position: relative;
+      background: rgba(0,0,0,0.25);
+      border-radius: 25px;
+      font-family: 'Raleway', 'Lato', Arial, sans-serif;
+      color: white;
+      text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+      .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
+
+      fieldset{
+        border-bottom: 1px dotted #585858;
+      }
+    }
+
+    /********************************************************************/
+    /********************************admin tables************************/
+    /********************************************************************/
+    .users{
+      width: 100%;
+      .border_left;
+      .border_right;
+      .border_top;
+
+      tr:nth-child(1){
+        .gradient(#004b00, rgba(00,150,0,1), rgba(00,75,0,1));
+        height: 27px;
+        color: white;
+      }
+
+      td{
+        vertical-align: middle;
+      }
+
+      .data{
+        height: 30px;
+        //background-color: rgb(37,37,37);
+        background-color: rgb(116,115,115);
+        border-bottom: 1px solid black;
+
+        td:nth-child(1){
+          padding-left: 2px;
+        }
+      }
+
+      .data:hover{
+        background-color: rgb(83, 83, 83);
+      }
+
+
+    }
+
+    .pagesLinks{
+      margin: 5px auto 0;
+      .width50;
+      .aligncenter;
+      a{
+        margin: 3px;
+        .font13pt;
+      }
+      .active{
+        color: white;
+      }
     }
   }
+  
 }
 
 #footer {
@@ -153,8 +221,124 @@ a:hover{
 /**************************************************************************/
 /*********************************Utilities********************************/
 /**************************************************************************/
+.slightBorder{ border: 1px dotted #585858; }
+.slightBorder_bottom{ border-bottom: 1px dotted #585858; }
+.slightBorder_top{ border-top: 1px dotted #585858; }
+.slightBorder_left{ border-left: 1px dotted #585858; }
+.slightBorder_right{ border-right: 1px dotted #585858; }
+
 .errorInput,  .errorInput:hover{
   .box-shadow( 0 0 0 3px rgba(255,0,0,0.25) )!important;
   outline: none;
+}
+
+.sortable{
+  margin: 0;
+}
+
+.successBanner{
+  color: #fff;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(48, 48, 48);
+  height: 50px;
+  .aligncenter;
+
+  .greenHat{
+    position: relative;
+    background-color: rgb(0, 105, 0);
+    height: 10px;
+    margin-bottom: 4px;
+  }
+  .redHat{
+    position: relative;
+    background-color: rgb(105, 0, 0);
+    height: 10px;
+    margin-bottom: 4px;
+  }
+}
+
+
+//golbal form look
+.redButton{
+  .gradient( rgb(75,0,00), rgba(125,0,0,1), rgba(75,0,00,1)) !important;
+  cursor: default !important;
+}
+
+input{
+  margin-top: 10px;
+  &[type="text"], &[type="password"]{
+    width: 282px;
+    padding: 8px 4px 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(46, 40, 40); /* Fallback for shity ie */
+    border: 1px solid rgba(46, 40, 40, 0.8);
+    background: rgba(0,0,0,0.15);
+    .border-radius(2px);
+    .box-shadow( inset 0 1px 1px rgba(0,0,0,0.1) );
+    //.transition( all .2s ease-out );
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+    color: white;
+    font-size: 13px;
+  }
+
+  &[type="text"]:hover, &[type="password"]:hover{
+    border-color: #333;
+  }
+
+  &[type="text"]:focus, &[type="password"]:focus, &[type="submit"]:focus, &[type="button"]:focus{
+    .box-shadow( 0 0 0 3px rgba(255,255,255,0.15) );
+    outline: none;
+  }
+
+  &[type="button"], &[type="submit"]{
+    /* Size and position */
+    width: 100%;
+    padding: 8px 5px;
+
+    /* Styles */
+    .gradient( rgb(00,75,00), rgba(00,150,0,1), rgba(00,75,00,1));
+    .border-radius( 5px );
+    border: 1px solid #4e3043;
+    box-shadow:
+      inset 0 1px rgba(255,255,255,0.4),
+      0 2px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+    //.transition( all 0.3s ease-out );
+
+    /* Font styles */
+    color: white;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  }
+}
+
+textarea{
+  margin-top: 10px;
+  height: 65px;
+  width: 282px;
+  padding: 8px 4px 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgb(46, 40, 40); /* Fallback for shity ie */
+  border: 1px solid rgba(46, 40, 40, 0.8);
+  background: rgba(0,0,0,0.15);
+  .border-radius(2px);
+  .box-shadow( inset 0 1px 1px rgba(0,0,0,0.1) );
+  //.transition( all .2s ease-out );
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  color: white;
+  font-size: 13px;
+}
+
+#errors{
+  text-transform: capitalize;
+  line-height: 12pt;
+  color: rgb(247, 76, 76);
+  display: none;
+  font-size: 10pt;
+  margin-bottom: 10px;
 }
 

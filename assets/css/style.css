@@ -117,6 +117,96 @@
 .margin20_left {
   margin-left: 20px !important;
 }
+.padding0 {
+  padding: 0px !important;
+}
+.padding0_top {
+  padding-top: 0px !important;
+}
+.padding0_right {
+  padding-right: 0px !important;
+}
+.padding0_bottom {
+  padding-bottom: 0px !important;
+}
+.padding0_left {
+  padding-left: 0px !important;
+}
+.padding5 {
+  padding: 5px !important;
+}
+.padding5_top {
+  padding-top: 5px !important;
+}
+.padding5_right {
+  padding-right: 5px !important;
+}
+.padding5_bottom {
+  padding-bottom: 5px !important;
+}
+.padding5_left {
+  padding-left: 5px !important;
+}
+.padding10 {
+  padding: 10px !important;
+}
+.padding10_top {
+  padding-top: 10px !important;
+}
+.padding10_right {
+  padding-right: 10px !important;
+}
+.padding10_bottom {
+  padding-bottom: 10px !important;
+}
+.padding10_left {
+  padding-left: 10px !important;
+}
+.padding15 {
+  padding: 15px !important;
+}
+.padding15_top {
+  padding-top: 15px !important;
+}
+.padding15_right {
+  padding-right: 15px !important;
+}
+.padding15_bottom {
+  padding-bottom: 15px !important;
+}
+.padding15_left {
+  padding-left: 15px !important;
+}
+.padding20 {
+  padding: 20px !important;
+}
+.padding20_top {
+  padding-top: 20px !important;
+}
+.padding20_right {
+  padding-right: 20px !important;
+}
+.padding20_bottom {
+  padding-bottom: 20px !important;
+}
+.padding20_left {
+  padding-left: 20px !important;
+}
+.border {
+  border: 1px solid black;
+}
+.border_bottom {
+  border-bottom: 1px solid black;
+}
+.border_top {
+  border-top: 1px solid black;
+}
+.border_left {
+  border-left: 1px solid black;
+}
+.border_right {
+  border-right: 1px solid black;
+}
 .centermargin {
   margin: 0 auto 0 !important;
 }
@@ -268,18 +358,13 @@
 }
 body {
   background-color: gray;
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
 }
 a {
   color: white;
 }
 a:hover {
   color: #acacac;
-}
-#wrapper {
-  /***********************************Login**********************************/
-
-  /**************************************************************************/
-
 }
 #wrapper header h1 {
   display: block;
@@ -298,6 +383,9 @@ a:hover {
   background: -ms-linear-gradient(top, #009600 1%, #004b00 100%);
   background: linear-gradient(to bottom, #009600 1%, #004b00 100%);
   padding: 5px 5px 0px 5px;
+  color: white;
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  font-size: 20px;
 }
 #wrapper nav a {
   /*stylize*/
@@ -318,9 +406,29 @@ a:hover {
   color: white;
 }
 #wrapper nav a:hover {
-  color: #cccccc;
+  text-decoration: underline;
+  color: #aaaaaa;
 }
-#wrapper .mainForm {
+#wrapper .content {
+  margin: 0 auto 0 !important;
+  width: 1155px;
+  margin-top: 10px !important;
+  /***********************************Login**********************************/
+
+  /**************************************************************************/
+
+  /********************************admin tables************************/
+
+  /********************************************************************/
+
+}
+#wrapper .content .pageTitle {
+  text-align: center;
+}
+#wrapper .content a {
+  text-decoration: underline;
+}
+#wrapper .content .mainForm {
   width: 300px;
   margin: 60px auto 30px;
   padding: 10px;
@@ -335,13 +443,195 @@ a:hover {
   -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
 }
-#wrapper .mainForm h1 {
+#wrapper .content .mainForm h1 {
   text-align: center;
   font-size: 22px;
   padding-bottom: 20px;
 }
-#wrapper .mainForm input[type="text"],
-#wrapper .mainForm input[type="password"] {
+#wrapper .content .createSurveyForm {
+  width: 800px;
+  margin: 60px auto 30px;
+  padding: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  color: white;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+#wrapper .content .createSurveyForm table {
+  width: 100%;
+}
+#wrapper .content .createSurveyForm h1 {
+  text-align: center;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+#wrapper .content .createSurveyForm input[type="text"],
+#wrapper .content .createSurveyForm input[type="password"] {
+  width: 600px;
+}
+#wrapper .content .createSurveyForm input[type="button"],
+#wrapper .content .createSurveyForm input[type="submit"] {
+  width: 300px;
+}
+#wrapper .content .createSurveyForm textarea {
+  width: 600px;
+}
+#wrapper .content .surveyForm,
+#wrapper .content .resultsPage,
+#wrapper .content .backIndex {
+  width: 800px;
+  margin: 60px auto 30px;
+  padding: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  color: white;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+#wrapper .content .surveyForm fieldset,
+#wrapper .content .resultsPage fieldset,
+#wrapper .content .backIndex fieldset {
+  border-bottom: 1px dotted #585858;
+}
+#wrapper .content .users {
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+#wrapper .content .users tr:nth-child(1) {
+  background: #004b00;
+  background: -moz-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #009600), color-stop(100%, #004b00));
+  background: -webkit-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -o-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -ms-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: linear-gradient(to bottom, #009600 1%, #004b00 100%);
+  height: 27px;
+  color: white;
+}
+#wrapper .content .users td {
+  vertical-align: middle;
+}
+#wrapper .content .users .data {
+  height: 30px;
+  background-color: #747373;
+  border-bottom: 1px solid black;
+}
+#wrapper .content .users .data td:nth-child(1) {
+  padding-left: 2px;
+}
+#wrapper .content .users .data:hover {
+  background-color: #535353;
+}
+#wrapper .content .pagesLinks {
+  margin: 5px auto 0;
+  width: 50% !important;
+  text-align: center;
+}
+#wrapper .content .pagesLinks a {
+  margin: 3px;
+  font-size: 13pt !important;
+}
+#wrapper .content .pagesLinks .active {
+  color: white;
+}
+#footer {
+  margin-top: 20px;
+  height: 28px;
+  background: #004b00;
+  background: -moz-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #009600), color-stop(100%, #004b00));
+  background: -webkit-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -o-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: -ms-linear-gradient(top, #009600 1%, #004b00 100%);
+  background: linear-gradient(to bottom, #009600 1%, #004b00 100%);
+  color: white;
+  text-align: center;
+}
+#footer p {
+  padding-top: 3px;
+}
+#footer a {
+  color: white;
+}
+/**************************************************************************/
+/*********************************Utilities********************************/
+/**************************************************************************/
+.slightBorder {
+  border: 1px dotted #585858;
+}
+.slightBorder_bottom {
+  border-bottom: 1px dotted #585858;
+}
+.slightBorder_top {
+  border-top: 1px dotted #585858;
+}
+.slightBorder_left {
+  border-left: 1px dotted #585858;
+}
+.slightBorder_right {
+  border-right: 1px dotted #585858;
+}
+.errorInput,
+.errorInput:hover {
+  -moz-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
+  -o-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
+  outline: none;
+}
+.sortable {
+  margin: 0;
+}
+.successBanner {
+  color: #fff;
+  top: 0;
+  width: 100%;
+  position: fixed;
+  background-color: #303030;
+  height: 50px;
+  text-align: center;
+}
+.successBanner .greenHat {
+  position: relative;
+  background-color: #006900;
+  height: 10px;
+  margin-bottom: 4px;
+}
+.successBanner .redHat {
+  position: relative;
+  background-color: #690000;
+  height: 10px;
+  margin-bottom: 4px;
+}
+.redButton {
+  background: #4b0000 !important;
+  background: -moz-linear-gradient(top, #7d0000 1%, #4b0000 100%) !important;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #7d0000), color-stop(100%, #4b0000)) !important;
+  background: -webkit-linear-gradient(top, #7d0000 1%, #4b0000 100%) !important;
+  background: -o-linear-gradient(top, #7d0000 1%, #4b0000 100%) !important;
+  background: -ms-linear-gradient(top, #7d0000 1%, #4b0000 100%) !important;
+  background: linear-gradient(to bottom, #7d0000 1%, #4b0000 100%) !important;
+  cursor: default !important;
+}
+input {
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="password"] {
   width: 282px;
   padding: 8px 4px 8px 10px;
   margin-bottom: 15px;
@@ -364,22 +654,22 @@ a:hover {
   color: white;
   font-size: 13px;
 }
-#wrapper .mainForm input[type="text"]:hover,
-#wrapper .mainForm input[type="password"]:hover {
+input[type="text"]:hover,
+input[type="password"]:hover {
   border-color: #333;
 }
-#wrapper .mainForm input[type="text"]:focus,
-#wrapper .mainForm input[type="password"]:focus,
-#wrapper .mainForm input[type="submit"]:focus,
-#wrapper .mainForm input[type="button"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus {
   -moz-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
   -o-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
   -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
   outline: none;
 }
-#wrapper .mainForm input[type="button"],
-#wrapper .mainForm input[type="submit"] {
+input[type="button"],
+input[type="submit"] {
   /* Size and position */
 
   width: 100%;
@@ -410,41 +700,36 @@ a:hover {
   font-weight: bold;
   font-family: 'Raleway', 'Lato', Arial, sans-serif;
 }
-#wrapper .mainForm #errors {
+textarea {
+  margin-top: 10px;
+  height: 65px;
+  width: 282px;
+  padding: 8px 4px 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #2e2828;
+  /* Fallback for shity ie */
+
+  border: 1px solid rgba(46, 40, 40, 0.8);
+  background: rgba(0, 0, 0, 0.15);
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  font-family: 'Raleway', 'Lato', Arial, sans-serif;
+  color: white;
+  font-size: 13px;
+}
+#errors {
   text-transform: capitalize;
   line-height: 12pt;
   color: #f74c4c;
   display: none;
-  font-size: 9pt;
+  font-size: 10pt;
   margin-bottom: 10px;
-}
-#footer {
-  margin-top: 20px;
-  height: 28px;
-  background: #004b00;
-  background: -moz-linear-gradient(top, #009600 1%, #004b00 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #009600), color-stop(100%, #004b00));
-  background: -webkit-linear-gradient(top, #009600 1%, #004b00 100%);
-  background: -o-linear-gradient(top, #009600 1%, #004b00 100%);
-  background: -ms-linear-gradient(top, #009600 1%, #004b00 100%);
-  background: linear-gradient(to bottom, #009600 1%, #004b00 100%);
-  color: white;
-  text-align: center;
-}
-#footer p {
-  padding-top: 3px;
-}
-#footer a {
-  color: white;
-}
-/**************************************************************************/
-/*********************************Utilities********************************/
-/**************************************************************************/
-.errorInput,
-.errorInput:hover {
-  -moz-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
-  -o-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
-  -webkit-box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
-  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.25) !important;
-  outline: none;
 }

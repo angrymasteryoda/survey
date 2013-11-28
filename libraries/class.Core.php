@@ -256,11 +256,11 @@ class Core {
         $timeSplit = explode(':', $time);
         if($timeSplit[0] > 12){
             return ($timeSplit[0]%12) . ':' . $timeSplit[1] . 'Pm';
-    }
-    else{
+        }
+        else{
             return $timeSplit[0] . ':' . $timeSplit[1] . 'Am';
+        }
     }
-}
 
     static function loadJavascript(){
         $paths = glob( APP_URL . 'assets/js/*.js' );
@@ -272,7 +272,208 @@ class Core {
     static function loadCss(){
         $paths = glob( APP_URL . 'assets/css/*.css' );
         foreach($paths as $path){
-            echo '<link type="text/css" rel="stylesheet" href="' . $path .'" />';
+            if ( !preg_match('/mixins.css/', $path) ) {
+                echo '<link type="text/css" rel="stylesheet" href="' . $path .'" />';
+            }
+
         }
+    }
+
+    static function simpleDate($timestamp){
+        date_default_timezone_set('America/Los_Angeles');
+        //Debug::echoArray( getdate( $timestamp ) );
+        $now = getdate( time() );
+        $then = getdate( $timestamp );
+
+        if ($then['minutes'] < 10) {
+            $then['minutes'] = '0' . $then['minutes'];
+        }
+
+        if( $now['month'] == $then['month'] &&  $now['year'] == $then['year'] && $now['mday'] == $then['mday']){
+            return self::getHumanTime( $then['hours'] . ':' . $then['minutes'] );
+        }
+        else if( $now['year'] == $then['year'] ){
+            return substr( $then['month'], 0, 3) . ' ' . $then['mday'];
+        }
+        else{
+            return substr( $then['month'], 0, 3) . ' ' . $then['mday'] . ' ' . $then['year'];
+        }
+    }
+
+    static function sortIcons($order){
+        //what if the page has a query already?
+        $queries = $_GET;
+
+        $queries['o'] = $order;
+        $queries['ob'] = 1;
+        $str =  '
+        <div class="floatright clearfix margin15_right">
+            <a class="sortable" href="?'. http_build_query($queries) .'"><img class="block" src="' .APP_URL . 'assets/img/icon_up_carrot.png" /></a>';
+        $queries['ob'] = -1;
+        $str .='
+            <a class="sortable" href="?'. http_build_query($queries) .'"><img class="block margin5_top" src="' .APP_URL . 'assets/img/icon_down_carrot.png" /></a>
+        </div>
+        ';
+        return $str;
+    }
+
+    static function getPageData($table = null, $items = 25){
+        if( is_null($table) )return'';
+
+        $dbName = DB_NAME;
+        $connection = new Mongo(DB_HOST);
+        $db = $connection->$dbName;
+        $collection = $db->$table;
+
+        $totalRecords = $collection->count();
+
+        $ipp = ( ( empty($_GET['ipp']) ) ? ( $items ) : ( $_GET['ipp'] ) );//item per page
+        $page = ( ( empty($_GET['p']) ) ? ( 1 ) : ( $_GET['p'] ) );
+        $startingPoint = ( ( empty($_GET['sp']) ) ? ( 0 ) : ( $_GET['sp'] ) );//where we left off
+
+
+        if ( !is_numeric($ipp) ) {
+            $ipp = $items;
+        }
+
+        if ( !is_numeric($page) ) {
+            $page = 1;
+        }
+
+        if ( !is_numeric($startingPoint) ) {
+            $startingPoint = 0;
+        }
+
+        if ( $totalRecords > $ipp ) {
+            $pages = ceil( $totalRecords / $ipp );
+        }
+        else{
+            $pages = 1;
+        }
+        return array(
+            'pages' => $pages,
+            'starting' => $startingPoint,
+            'ipp' => $ipp,
+            'page' => $page
+        );
+    }
+
+    static function printPageLinks($pageData = null, $canEcho = true){
+        if( is_null($pageData) ){return'';}
+        $queries = $_GET;
+
+        $str ='<div class="pagesLinks">';
+        for ( $i = 0; $i < $pageData['pages']; $i++ ) {
+            if( ($i+1) != $pageData['page']){
+                $queries['p'] = ($i+1);
+                $queries['sp'] = ($pageData['ipp'] * $i);
+                $str .= '<a class="pageNum" href="?'. http_build_query($queries) .'">' . ($i+1) . '</a>';
+            }
+            else{
+                $str .= '<a class="active">' . ($i+1) . '</a>';
+            }
+        }
+        $str .= '</div>';
+
+        if ( $canEcho ) {
+            echo $str;
+        }
+        else{
+            return $str;
+        }
+
+    }
+
+    static function printQuestion($question, $num){
+        $type = $question['answerType'];
+        switch($type){
+            case 'single':
+                echo '
+                <fieldset>
+                    <div>Question '. $num .':<br>
+                        <div class="margin10_left">
+                            <label>'.$question['question'].'<br>
+                                <input placeholder="Question '. $num .'" name="answer['. $num .']" type="text" data-type="longWords"/>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                ';
+                break;
+
+            case 'write' :
+                echo '
+                <fieldset>
+                    <div>Question '. $num .':<br>
+                        <div class="margin10_left">
+                            <label>'.$question['question'].'<br>
+                                <textarea placeholder="Question '. $num .'" name="answer['. $num .']" data-type="longWords"></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                ';
+                break;
+            case 'multi':
+                $options = explode(',', $question['multiAnswer']);
+                echo '
+                <fieldset>
+                    <div>Question '. $num .':<br>
+                        <div class="margin10_left">
+                            <label class="multiAns">'.$question['question'].'<br>';
+                                foreach ( $options as $option ) {
+                                    $option = trim( $option );
+                                    echo '<input type="radio" name="answer['. $num .']" value="'. $option .'"/>'. $option .'<br>';
+                                }
+                echo '
+                            </label>
+                            <div class="margin10_bottom">&nbsp;</div>
+                        </div>
+                    </div>
+                </fieldset>
+                ';
+                break;
+            case 't/f':
+                echo '
+                <fieldset>
+                    <div>Question '. $num .':<br>
+                        <div class="margin10_left">
+                            <label class="multiAns">'.$question['question'].'<br>
+                                <input type="radio" name="answer['. $num .']" value="true"/>True<br>
+                                <input type="radio" name="answer['. $num .']" value="false"/>False<br>
+                            </label>
+                            <div class="margin10_bottom">&nbsp;</div>
+                        </div>
+                    </div>
+                </fieldset>
+                ';
+                break;
+        }
+    }
+    
+    public static function printRightsForm($rights, $canEcho = false){
+        $allRights = array(
+            SURVEY_TAKE_RIGHTS => false,
+            SURVEY_RESULTS_RIGHTS => false,
+            SURVEY_RETAKE_RIGHTS => false,
+            SURVEY_DELETE_RIGHTS => false,
+            ADMIN_RIGHTS => false
+        );
+        foreach ( $rights as $right ) {
+            $allRights[$right] = true;
+
+        }
+
+        $str = '
+            <input type="checkbox" name="rightBox" value="take"   '. ( ($allRights[SURVEY_TAKE_RIGHTS]) ? ('checked') : ('') ) .'/>Take
+            <input type="checkbox" name="rightBox" value="results"'. ( ($allRights[SURVEY_RESULTS_RIGHTS]) ? ('checked') : ('') ) .'/>Results
+            <input type="checkbox" name="rightBox" value="retake" '. ( ($allRights[SURVEY_RETAKE_RIGHTS]) ? ('checked') : ('') ) .'/>Retake
+            <input type="checkbox" name="rightBox" value="delete" '. ( ($allRights[SURVEY_DELETE_RIGHTS]) ? ('checked') : ('') ) .'/>Delete
+            <input type="checkbox" name="rightBox" value="*"      '. ( ($allRights[ADMIN_RIGHTS]) ? ('checked') : ('') ) .'/>Admin
+
+        ';
+
+        return $str;
+
     }
 }

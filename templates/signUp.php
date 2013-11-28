@@ -27,12 +27,12 @@ include_once '../config/global.php';
 					</p>
 					<p>
 						<label>Password
-						    <input type="password" name="password" id="password" class="" placeholder="Password" value="123456" data-type="password"/>
+						    <input type="password" name="password" id="password" class="" placeholder="Password" value="Risher10" data-type="complex-password"/>
                         </label>
 					</p>
 					<p>
 						<label>Confirm Password
-						    <input type="password" name="confirmPassword" id="confirmPassword" class="" placeholder="Confirm Password" value="123456" data-type="confPassword"/>
+						    <input type="password" name="confirmPassword" id="confirmPassword" class="" placeholder="Confirm Password" value="Risher10" data-type="confComplex-password"/>
                         </label>
 					</p>
 					<p>
@@ -46,13 +46,13 @@ include_once '../config/global.php';
                         </label>
 					</p>
 					<p>
-						<input type="button" class="submit" name="submit" value="Sign Up" data-type="submit"/>
+						<input type="submit" class="submit" name="submit" value="Sign Up" data-type="submit"/>
 					</p>
 				</form>
 			</div>
 		</div>
         <?php
-        Core::loadJavascript();
+        include '../assets/inc/footer.php';
         ?>
 	</body>
 </html>

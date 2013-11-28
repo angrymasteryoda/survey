@@ -1,13 +1,5 @@
 <?php
-include_once '../config/global.php';
 
-function loadClasses(){
-    $paths = glob( '../libraries/class.*.php' );
-    foreach($paths as $path){
-        require_once($path);
-    }
-}
-loadClasses();
 
 Core::loadCss();
 

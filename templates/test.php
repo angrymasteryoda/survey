@@ -11,28 +11,50 @@ include '../config/global.php';
 
 loadClasses();
 
-$b = array(
-    'username' => 'michael',
-    'password' => 'goldfish'
-);
-
-
-$a = array(
-    array(
-        'field' =>'username',
-        'use' => 'name',
-    ),
-    array(
-        'field' =>'password',
-        'use' => 'pass',
-    )
-);
-echo 'test';
-
-
-Test::newvalidate( $a, $b );
-
-//Debug::echoArray( Test::newvalidate( $a, $b ) );
+////post data
+//$b = array(
+//    'username' => 'sad',
+//    'last name' => '',
+//    'password' => 'goldfish'
+//);
+//
+//
+//$a = array(
+//    array(
+//        'field' =>'username',
+//        'type' => 'username',
+//    ),
+//    array(
+//        'field' =>'last name',
+//        'type' => 'username, password',
+//    ),
+//    array(
+//        'field' =>'password',
+//        'type' => 'password',
+//    )
+//);
+//
+//
+//
+//Debug::echoArray( Test::validate( $a, $b ) );
+//
+////Debug::echoArray( Test::newvalidate( $a, $b ) );
+//
+//
+//function str_lreplace($search, $replace, $subject)
+//{
+//    $pos = strrpos($subject, $search);
+//
+//    if($pos !== false)
+//    {
+//        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+//    }
+//
+//    return $subject;
+//}
+//
+$s = 'akshd,kajhsd,\'lask\'"dj"';
+echo Security::sanitize($s, NO_QUOTES);
 
 ?>
 

@@ -1,7 +1,9 @@
 <?php
 include_once '../config/global.php';
 if ( checkLogin(false) ) {
-    header('Location:' . APP_URL . 'templates/');
+    if ( Auth::checkPermissions(ADMIN_RIGHTS) ) {
+        header('Location:' . APP_URL . 'back/');
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -18,9 +20,8 @@ if ( checkLogin(false) ) {
     ?>
 
     <div class="content">
-        <form class="loginForm mainForm">
-            <h1>Log In to Take Survey</h1>
-            <div class="margin15_bottom aligncenter">Don't have an account register one <a href="<?php echo APP_URL?>templates/signUp.php">here</a></div>
+        <form class="loginForm mainForm adminLogin">
+            <h1>Log In to Admin Section</h1>
             <p id="errors"></p>
             <p id="Temp"> </p>
             <p>

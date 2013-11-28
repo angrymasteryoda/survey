@@ -9,7 +9,7 @@ include_once '../config/global.php';
 		?>
 	</head>
 	<body>
-		<?php 
+		<?php
 			echo APP_NAME;
 		?>
 	</body>
